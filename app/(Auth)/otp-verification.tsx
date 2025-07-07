@@ -88,7 +88,7 @@ export default function OTPVerificationPage() {
       
       {/* Description */}
       <Text className="text-sm font-poppins text-gray-600 text-center mb-12 px-4">
-        Enter the OTP associated with your account and we'll send an SMS with instructions to reset your password.
+        Enter the OTP associated with your account and we&apos;ll send an SMS with instructions to reset your password.
       </Text>
 
       {/* Illustration */}
@@ -147,7 +147,7 @@ export default function OTPVerificationPage() {
         {/* Resend 122Code */}
         <View className="items-center mb-8">
           <Text className="text-sm font-poppins text-gray-600 mb-2">
-            Don't Receive the OTP ?
+            Don&apos;t Receive the OTP ?
           </Text>
           <TouchableOpacity 
             onPress={handleResendCode}
