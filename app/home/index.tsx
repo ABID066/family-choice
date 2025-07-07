@@ -18,8 +18,10 @@ import CategoryTabs from '../../components/home/CategoryTabs';
 import ServiceSection from '../../components/home/ServiceSection';
 import BottomNavigation from '../../components/home/BottomNavigation';
 import { services, bannerImages, ServiceItem, BannerItem } from '../../components/common';
+import { useRouter } from 'expo-router';
 
 export default function HomePage() {
+  const router = useRouter()
   const [searchQuery, setSearchQuery] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
@@ -53,6 +55,7 @@ export default function HomePage() {
 
   const handleBookNow = (serviceId: string) => {
     // Handle booking logic here
+    router.push(`/nursery/${serviceId}`)
     console.log('Booking service:', serviceId);
   };
 
