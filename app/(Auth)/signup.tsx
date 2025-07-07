@@ -1,7 +1,7 @@
 import { View, Text, Image, TextInput, TouchableOpacity, ScrollView, Modal, FlatList } from 'react-native';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 export default function SignUpPage() {
   const [fullName, setFullName] = useState('');
@@ -223,7 +223,10 @@ export default function SignUpPage() {
         </View>
 
         {/* Register Button */}
-        <TouchableOpacity className="bg-gg rounded-full py-4 mb-6">
+        <TouchableOpacity 
+          className="bg-gg rounded-full py-4 mb-6"
+          onPress={() => router.push('/location')}
+        >
           <Text className="text-white text-center text-lg font-poppins-semibold">
             Register
           </Text>
