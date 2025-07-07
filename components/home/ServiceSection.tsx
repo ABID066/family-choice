@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import ServiceCard, { ServiceItem } from './ServiceCard';
+import { ServiceCard, ServiceItem } from '../common';
 
 interface ServiceSectionProps {
   title: string;

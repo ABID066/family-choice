@@ -1,16 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, ImageSourcePropType } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
-interface ServiceItem {
-  id: string;
-  name: string;
-  location: string;
-  rating: number;
-  seatsRemaining: number;
-  image: ImageSourcePropType;
-  type: 'nursery' | 'school';
-}
+import { ServiceItem } from './data';
 
 interface ServiceCardProps {
   item: ServiceItem;
@@ -69,7 +60,7 @@ export default function ServiceCard({
           </Text>
 
           <TouchableOpacity 
-            className="bg-gg rounded-lg ml-4 py-2 px-2"
+            className="bg-gg rounded-lg ml-2 py-2 px-2"
             onPress={() => onBookNow(item.id)}
           >
             <Text className="text-center text-xs font-poppins-semibold text-white">
@@ -81,5 +72,3 @@ export default function ServiceCard({
     </View>
   );
 }
-
-export type { ServiceItem };
