@@ -25,27 +25,28 @@ export default function ResetPasswordPage() {
     }
 
     // If validation passes, navigate to OTP verification page with email parameter
-     router.push(`/otp-verification?email=${encodeURIComponent(email)}`);
+    router.push(`/otp-verification?email=${encodeURIComponent(email)}`);
   };
 
   return (
-      <View className="flex-1 bg-white px-6 ">
+    <View className="flex-1 bg-white px-6 ">
       {/* Header */}
-      <Text className="text-2xl font-poppins-bold text-black text-center mt-20 mb-4">
+      <Text className="mb-4 mt-20 text-center font-poppins-bold text-2xl text-black">
         Reset password
       </Text>
-      
+
       {/* Description */}
-      <Text className="text-sm font-poppins text-gray-600 text-center mb-12 px-4">
-        Enter the email associated with your account and we'll send an email with instructions to reset your password.
+      <Text className="mb-12 px-4 text-center font-poppins text-sm text-gray-600">
+        Enter the email associated with your account and we&apos;ll send an email with instructions
+        to reset your password.
       </Text>
 
       {/* Illustration */}
-      <View className="items-center mb-12">
+      <View className="mb-12 items-center">
         <View className="mb-6">
-          <Image 
-            source={require('../../assets/resetPassword.png')} 
-            className="w-64 h-48"
+          <Image
+            source={require('../../assets/resetPassword.png')}
+            className="h-48 w-64"
             resizeMode="contain"
           />
         </View>
@@ -53,10 +54,8 @@ export default function ResetPasswordPage() {
 
       {/* Email Input */}
       <View className="mb-8">
-        <Text className="text-md font-poppins-medium text-black mb-2">
-          Email Address
-        </Text>
-        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-3">
+        <Text className="text-md mb-2 font-poppins-medium text-black">Email Address</Text>
+        <View className="flex-row items-center rounded-full border border-gray-300 px-4 py-3">
           <Ionicons name="mail-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="abc*****@gmail.com"
@@ -64,23 +63,18 @@ export default function ResetPasswordPage() {
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            className="flex-1 font-poppins text-gray-700 ml-3"
+            className="ml-3 flex-1 font-poppins text-gray-700"
             placeholderTextColor="#9CA3AF"
           />
         </View>
       </View>
 
       {/* Send Instructions Button */}
-      <TouchableOpacity 
-        className="bg-gg rounded-full py-4 mb-6"
-        onPress={handleSendInstructions}
-      >
-        <Text className="text-white text-center text-lg font-poppins-semibold">
+      <TouchableOpacity className="mb-6 rounded-full bg-gg py-4" onPress={handleSendInstructions}>
+        <Text className="text-center font-poppins-semibold text-lg text-white">
           Send instructions
         </Text>
       </TouchableOpacity>
-
-      
     </View>
   );
 }
