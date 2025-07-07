@@ -68,11 +68,13 @@ export default function SignInPage() {
       </View>
 
       {/* Forgot Password */}
-      <TouchableOpacity className="self-start mb-8">
-        <Text className="text-md font-poppins text-[#52A587]">
-          Forgot password ?
-        </Text>
-      </TouchableOpacity>
+      <Link href="/reset-password" asChild>
+        <TouchableOpacity className="self-start mb-8">
+          <Text className="text-md font-poppins text-[#52A587]">
+            Forgot password ?
+          </Text>
+        </TouchableOpacity>
+      </Link>
 
       {/* Login Button */}
       <TouchableOpacity className="bg-gg rounded-full py-4 mb-6">
