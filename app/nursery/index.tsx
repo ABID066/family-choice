@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
-  FlatList,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { PageHeader, ServiceCard, services, ServiceItem } from '../../components/common';
@@ -36,16 +35,7 @@ export default function NurseryPage() {
     console.log('Booking nursery service:', serviceId);
   };
 
-  const renderServiceCard = ({ item }: { item: ServiceItem }) => (
-    <View className="w-[49%] mb-4">
-      <ServiceCard
-        item={item}
-        isFavorite={favorites.includes(item.id)}
-        onToggleFavorite={toggleFavorite}
-        onBookNow={handleBookNow}
-      />
-    </View>
-  );
+
 
   return (
     <SafeAreaView className="flex-1 mt-10 bg-gray-50">
@@ -58,17 +48,24 @@ export default function NurseryPage() {
       
 
       {/* Services List */}
-      <View className="flex-1 px-6">
-        <FlatList
-          data={filteredServices}
-          renderItem={renderServiceCard}
-          keyExtractor={(item) => item.id}
-          numColumns={2}
-          columnWrapperStyle={{ justifyContent: 'space-between' }}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 20 }}
-        />
-      </View>
+      <ScrollView 
+        className="flex-1 px-6"
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      >
+        <View className="flex-row flex-wrap justify-between">
+          {filteredServices.map((item) => (
+            <View key={item.id} className="w-[49%] mb-4">
+              <ServiceCard
+                item={item}
+                isFavorite={favorites.includes(item.id)}
+                onToggleFavorite={toggleFavorite}
+                onBookNow={handleBookNow}
+              />
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
