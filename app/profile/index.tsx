@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, SafeAreaView, Image, Modal, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { PageHeader } from '../../components/common';
@@ -78,10 +78,10 @@ export default function ProfilePage() {
   };
 
   return (
-    <SafeAreaView className="flex-1 mt-16 bg-white">
+    <SafeAreaView className="flex-1 mt-5 bg-white">
       <PageHeader title="Profile" showBackButton={false} />
       
-      <ScrollView className="flex-1">
+      <ScrollView className="flex-1 pb-20">
         {/* Profile Header */}
         <View className="items-center py-8 px-4">
           <View className="w-24 h-24 rounded-full overflow-hidden mb-4">
@@ -107,7 +107,7 @@ export default function ProfilePage() {
                 {renderIcon(option.icon, option.iconType, option.color)}
               </View>
               <View className="flex-1">
-                <Text className="font-poppins-medium text-gray-800 text-lg">{option.title}</Text>
+                <Text className="font-poppins-medium text-[#52A587] text-md">{option.title}</Text>
               </View>
               <Ionicons name="chevron-forward" size={20} color="#52A587" />
             </TouchableOpacity>

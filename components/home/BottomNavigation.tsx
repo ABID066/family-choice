@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Entypo from '@expo/vector-icons/Entypo';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { router, usePathname } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface BottomNavigationProps {
   // No props needed as we're using router navigation
@@ -11,6 +12,7 @@ interface BottomNavigationProps {
 
 export default function BottomNavigation({}: BottomNavigationProps = {}) {
   const pathname = usePathname();
+  const insets = useSafeAreaInsets();
   
   const handleHomePress = () => {
     router.push('/home');
@@ -32,13 +34,13 @@ export default function BottomNavigation({}: BottomNavigationProps = {}) {
   const getIconColor = (route: string) => isActive(route) ? '#52A587' : '#9CA3AF';
   const getTextColor = (route: string) => isActive(route) ? 'text-gg' : 'text-gray-500';
   return (
-    <View className="bg-[#E5F1ED] border-t border-gray-200">
-      <View className="flex-row items-center justify-around py-3">
+    <View className="bg-[#E5F1ED] border-t border-gray-200" style={{ paddingBottom: insets.bottom }}>
+      <View className="flex-row items-center justify-around py-2">
         <TouchableOpacity 
           className="items-center py-2"
           onPress={handleHomePress}
         >
-          <Entypo name="home" size={24} color={getIconColor('/home')} />
+          <Entypo name="home" size={20} color={getIconColor('/home')} />
           <Text className={`font-poppins text-xs ${getTextColor('/home')} mt-1`}>Home</Text>
         </TouchableOpacity>
         
@@ -46,7 +48,7 @@ export default function BottomNavigation({}: BottomNavigationProps = {}) {
           className="items-center py-2"
           onPress={handleLovePress}
         >
-          <AntDesign name="heart" size={24} color={getIconColor('/favorite')} />
+          <AntDesign name="heart" size={20} color={getIconColor('/favorite')} />
           <Text className={`font-poppins text-xs ${getTextColor('/favorite')} mt-1`}>Love</Text>
         </TouchableOpacity>
         
@@ -54,7 +56,7 @@ export default function BottomNavigation({}: BottomNavigationProps = {}) {
           className="items-center py-2"
           onPress={handleStorePress}
         >
-          <Ionicons name="grid" size={24} color={getIconColor('/shortList')} />
+          <Ionicons name="grid" size={20} color={getIconColor('/shortList')} />
           <Text className={`font-poppins text-xs ${getTextColor('/shortList')} mt-1`}>Sorted by</Text>
         </TouchableOpacity>
         
@@ -62,7 +64,7 @@ export default function BottomNavigation({}: BottomNavigationProps = {}) {
           className="items-center py-2"
           onPress={handleProfilePress}
         >
-          <Ionicons name="person-sharp" size={24} color={getIconColor('/profile')} />
+          <Ionicons name="person-sharp" size={20} color={getIconColor('/profile')} />
           <Text className={`font-poppins text-xs ${getTextColor('/profile')} mt-1`}>Profile</Text>
         </TouchableOpacity>
       </View>

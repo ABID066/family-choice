@@ -65,7 +65,7 @@ export default function HomePage() {
 
   return (
     <SafeAreaView className="flex-1 mt-10 bg-white">
-      <ScrollView className="flex-1">
+      <ScrollView className="flex-1 pb-20">
         {/* Header */}
         <Header />
         

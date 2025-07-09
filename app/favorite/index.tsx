@@ -38,10 +38,10 @@ export default function FavoritePage() {
   };
 
   return (
-    <SafeAreaView className="flex-1 mt-16 bg-white">
+    <SafeAreaView className="flex-1 mt-5 bg-white">
       <PageHeader  title="Favorite" showBackButton={false} />
       
-      <ScrollView className="flex-1 px-4">
+      <ScrollView className="flex-1 px-4 pb-20">
         {favorites.length > 0 ? (
           <View className="py-4">
             {favorites.map((item) => (
@@ -70,15 +70,15 @@ export default function FavoritePage() {
                       <Text className="font-poppins text-xs text-gray-600 ml-1">{item.location}</Text>
                       <View className="flex-row items-center ml-3">
                         <Ionicons name="star" size={14} color="#F59E0B" />
-                        <Text className="font-poppins-medium text-sm text-gray-800 ml-1">{item.rating}</Text>
+                        <Text className="font-poppins-medium text-xs text-gray-800 ml-1">{item.rating}</Text>
                         
                       </View>
                     </View>
                     
                     <View className="flex-row items-center justify-between">
-                      <Text className="font-poppins text-xs text-gray-500 ml-2">{item.remaining}</Text>
+                      <Text className="font-poppins text-[9px] text-gray-500 mr-1">{item.remaining}</Text>
                       
-                      <TouchableOpacity className="bg-[#52A587] px-3 py-1.5 rounded-lg">
+                      <TouchableOpacity className="bg-[#52A587] px-1.5 py-1.5 rounded-lg">
                         <Text className="font-poppins-medium text-white text-xs">Book now</Text>
                       </TouchableOpacity>
                       <TouchableOpacity className="bg-gray-200 px-1.5 py-1.5 rounded-full ml-2">

@@ -2,6 +2,9 @@ import { Slot } from 'expo-router';
 import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import { View,} from "react-native";
 import '../global.css';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -25,5 +28,11 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Slot />;
+  return (
+    
+      <View style={{ flex: 1 }}>
+        <Slot />
+      </View>
+    
+  );
 }

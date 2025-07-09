@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
@@ -9,7 +9,7 @@ export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <View className="flex-1 bg-white px-6 justify-center">
+    <ScrollView className="flex-1 mb-2 bg-white" contentContainerStyle={{ paddingHorizontal: 24, justifyContent: 'center', flexGrow: 1 }}>
       {/* Logo and Title */}
       <View className="items-center mb-12">
         <View className="mb-6">
@@ -28,7 +28,7 @@ export default function SignInPage() {
         <Text className="text-md bord  font-poppins-medium text-black mb-2">
           Your Email
         </Text>
-        <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-3">
+        <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-1">
           <Ionicons name="mail-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="Email"
@@ -47,7 +47,7 @@ export default function SignInPage() {
         <Text className="text-md font-poppins-medium text-black mb-2">
           Password
         </Text>
-        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-3">
+        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-1">
           <Ionicons name="lock-closed-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="••••••••••••"
@@ -78,7 +78,7 @@ export default function SignInPage() {
 
       {/* Login Button */}
       <TouchableOpacity className="bg-gg rounded-full py-4 mb-6">
-        <Text className="text-white text-center text-lg font-poppins-semibold">
+        <Text className="text-white text-center text-md font-poppins-semibold">
           Login
         </Text>
       </TouchableOpacity>
@@ -96,6 +96,6 @@ export default function SignInPage() {
           </TouchableOpacity>
         </Link>
       </View>
-    </View>
+    </ScrollView>
   );
 }
