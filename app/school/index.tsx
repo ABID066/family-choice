@@ -46,7 +46,7 @@ export default function SchoolPage() {
 
       {/* Services List */}
       <ScrollView 
-        className="flex-1 px-6"
+        className="flex-1 px-1"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
       >
