@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { View, Text, Image, ScrollView, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { PageHeader } from '../../components/common';
