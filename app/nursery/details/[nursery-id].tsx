@@ -17,9 +17,9 @@ import { PageHeader } from '@/components/common';
 const { width } = Dimensions.get('window');
 
 const images = [
-  require('../../assets/nursery.png'),
-  require('../../assets/nursery.png'),
-  require('../../assets/nursery.png'),
+  require('@/assets/nursery.png'),
+  require('@/assets/nursery.png'),
+  require('@/assets/nursery.png'),
 ];
 
 export default function NurseryDetailsPage() {
@@ -139,7 +139,7 @@ export default function NurseryDetailsPage() {
                 <Text className="mb-4 text-lg font-semibold">Review&apos;s</Text>
                 <View className="mb-4 flex-row items-center">
                   <Image
-                    source={require('../../assets/icon.png')}
+                    source={require('@/assets/icon.png')}
                     className="h-10 w-10 rounded-full"
                   />
                   <View className="ml-3">
@@ -295,7 +295,7 @@ export default function NurseryDetailsPage() {
           {/* Fixed Bottom Buttons */}
           <View className="flex-row items-center justify-between border-t border-gray-200 bg-white px-4 py-3">
             <TouchableOpacity
-              onPress={() => router.push(`/nursery/book-now/${id}`)}
+              onPress={() => router.push(`/book-now/${id}`)}
               className="mx-1 flex-1 rounded-lg bg-[#52A587] py-3">
               <Text className="text-center font-semibold text-white">Book now</Text>
             </TouchableOpacity>
