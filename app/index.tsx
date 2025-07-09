@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* Logo */}
       <View className="mb-8">
         <Image 
-          source={require('../assets/logo.png')} 
+          source={require('@/assets/logo.png')} 
           className="w-30 h-30"
           resizeMode="contain"
         />

@@ -20,8 +20,10 @@ export default function LocationPage() {
       {/* Center Content */}
       <View className="flex-1 justify-center items-center">
         <Image 
+
           source={require('../../assets/map.png')}
           className="w-36 h-36"
+
           resizeMode="contain"
         />
       </View>

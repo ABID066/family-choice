@@ -33,6 +33,7 @@ export default function NurseryPage() {
   const handleBookNow = (serviceId: string) => {
     // Handle booking logic here
     console.log('Booking nursery service:', serviceId);
+    router.push(`/nursery/details/${serviceId}`)
   };
 
 

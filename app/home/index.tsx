@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  ScrollView,
-  SafeAreaView,
-  Dimensions,
-} from 'react-native';
-import Animated, {
-  useSharedValue,
-  withSpring,
-} from 'react-native-reanimated';
+import { View, ScrollView, SafeAreaView, Dimensions } from 'react-native';
+import Animated, { useSharedValue, withSpring } from 'react-native-reanimated';
 
 // Import components
 import Header from '../../components/home/Header';
@@ -21,18 +13,16 @@ import { services, bannerImages, ServiceItem, BannerItem } from '../../component
 import { useRouter } from 'expo-router';
 
 export default function HomePage() {
-  const router = useRouter()
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
-  
+
   const screenWidth = Dimensions.get('window').width;
   const translateX = useSharedValue(0);
-  
+
   // Banner images imported from common data
-  
- 
-  
+
   const goToSlide = (index: number) => {
     translateX.value = withSpring(-(index * (screenWidth - 48)));
     setCurrentBannerIndex(index);
@@ -41,55 +31,49 @@ export default function HomePage() {
   // Services data imported from common data
 
   const toggleFavorite = (id: string) => {
-    setFavorites(prev => 
-      prev.includes(id) 
-        ? prev.filter(fav => fav !== id)
-        : [...prev, id]
-    );
+    setFavorites((prev) => (prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]));
   };
 
   // Services can be filtered by search query if needed
-  // const filteredServices = services.filter(service => 
+  // const filteredServices = services.filter(service =>
   //   service.name.toLowerCase().includes(searchQuery.toLowerCase())
   // );
 
   const handleBookNow = (serviceId: string) => {
     // Handle booking logic here
-    router.push(`/nursery/${serviceId}`)
+    router.push(`/nursery/details/${serviceId}`);
     console.log('Booking service:', serviceId);
   };
 
   // Filter services by type
-  const nurseryServices = services.filter(service => service.type === 'nursery');
-  const schoolServices = services.filter(service => service.type === 'school');
+  const nurseryServices = services.filter((service) => service.type === 'nursery');
+  const schoolServices = services.filter((service) => service.type === 'school');
 
   return (
     <SafeAreaView className="flex-1 mt-10 bg-white">
       <ScrollView className="flex-1 pb-20">
+
         {/* Header */}
-        <Header />
-        
+        <Header onNotificationPress={() => router.push('/notification')} />
+
         {/* Search Bar */}
         <View className="px-6">
-          <SearchBar 
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-          />
+          <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
         </View>
-        
+
         {/* Family Choice Banner */}
-        <FamilyChoiceBanner 
+        <FamilyChoiceBanner
           bannerImages={bannerImages}
           currentBannerIndex={currentBannerIndex}
           translateX={translateX}
           onSlidePress={goToSlide}
         />
-        
+
         {/* Category Tabs */}
         <CategoryTabs />
-        
+
         {/* Nursery Section */}
-        <ServiceSection 
+        <ServiceSection
           title="Nursery"
           services={nurseryServices}
           favorites={favorites}
@@ -98,7 +82,7 @@ export default function HomePage() {
         />
 
         {/* School Section */}
-        <ServiceSection 
+        <ServiceSection
           title="School"
           services={schoolServices}
           favorites={favorites}
@@ -106,7 +90,7 @@ export default function HomePage() {
           onBookNow={handleBookNow}
         />
       </ScrollView>
-      
+
       {/* Bottom Navigation */}
       <BottomNavigation />
     </SafeAreaView>

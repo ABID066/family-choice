@@ -39,7 +39,7 @@ export default function CreatePasswordPage() {
       <View className="items-center mb-12">
         <View className="mb-6">
           <Image 
-            source={require('../../assets/resetPassword.png')} 
+            source={require('@/assets/resetPassword.png')} 
             className="w-64 h-48"
             resizeMode="contain"
           />
