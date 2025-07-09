@@ -71,7 +71,7 @@ export default function BookingPage() {
       </View>
       <View className="my-4">
         <Image
-          source={require('../../assets/nursery.png')}
+          source={require('@/assets/nursery.png')}
           className="h-48 w-full rounded-lg"
           resizeMode="cover"
         />
@@ -95,7 +95,7 @@ export default function BookingPage() {
         <View className="mb-4 flex-row items-center rounded-[92px] bg-white shadow-[3px_2px_5px_0px_rgba(82,165,135,0.8)]">
           <View className="mr-2 flex-row items-center p-4">
             <Image
-              source={require('../../assets/icon.png')}
+              source={require('@/assets/icon.png')}
               className="h-6 w-6"
               resizeMode="contain"
             />
