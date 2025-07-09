@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
@@ -24,9 +24,9 @@ export default function CreatePasswordPage() {
   };
 
   return (
-    <View className="flex-1 bg-white px-6 ">
+    <ScrollView className="flex-1 mb-6 bg-white" contentContainerStyle={{ paddingHorizontal: 24 }}>
       {/* Header */}
-      <Text className="text-2xl font-poppins-bold text-black text-center mt-20 mb-4">
+      <Text className="text-2xl font-poppins-bold text-black text-center mt-16 mb-4">
         Create password
       </Text>
       
@@ -51,7 +51,7 @@ export default function CreatePasswordPage() {
         <Text className="text-md font-poppins-medium text-black mb-2">
           Password
         </Text>
-        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-3">
+        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-2">
           <Ionicons name="lock-closed-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="••••••••••••"
@@ -76,7 +76,7 @@ export default function CreatePasswordPage() {
         <Text className="text-md font-poppins-medium text-black mb-2">
           Confirmation password
         </Text>
-        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-3">
+        <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-2">
           <Ionicons name="lock-closed-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="••••••••••••"
@@ -107,6 +107,6 @@ export default function CreatePasswordPage() {
       </TouchableOpacity>
 
       
-    </View>
+    </ScrollView>
   );
 }

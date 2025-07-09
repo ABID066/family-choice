@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 
 export default function LocationPage() {
@@ -9,7 +9,7 @@ export default function LocationPage() {
   };
 
   return (
-    <View className="flex-1 bg-white px-6">
+    <ScrollView className="flex-1 mb-5 bg-white" contentContainerStyle={{ paddingHorizontal: 24, flexGrow: 1 }}>
       {/* Header */}
       <View className="pt-16 pb-8">
         <Text className="text-2xl font-poppins-bold text-center text-black">
@@ -20,8 +20,10 @@ export default function LocationPage() {
       {/* Center Content */}
       <View className="flex-1 justify-center items-center">
         <Image 
-          source={require('@/assets/map.png')}
-          className="w-64 h-64"
+
+          source={require('../../assets/map.png')}
+          className="w-36 h-36"
+
           resizeMode="contain"
         />
       </View>
@@ -33,7 +35,7 @@ export default function LocationPage() {
           className="bg-gg rounded-full py-4 mb-4"
           onPress={handleUseCurrentLocation}
         >
-          <Text className="text-white text-center text-lg font-poppins-semibold">
+          <Text className="text-white text-center text-md font-poppins-semibold">
             Use Current location
           </Text>
         </TouchableOpacity>
@@ -43,11 +45,11 @@ export default function LocationPage() {
           className="bg-gray-200 rounded-full py-4"
           onPress={() => router.push('/(Auth)/map-selection')}
         >
-          <Text className="text-gray-700 text-center text-lg font-poppins-semibold">
+          <Text className="text-gray-700 text-center text-md font-poppins-semibold">
             Set From Map
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }

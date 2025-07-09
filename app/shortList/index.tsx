@@ -5,10 +5,10 @@ import BottomNavigation from '../../components/home/BottomNavigation';
 
 export default function ShortListPage() {
   return (
-    <SafeAreaView className="flex-1 mt-16 bg-white">
+    <SafeAreaView className="flex-1 mt-5 bg-white">
       <PageHeader title="Shorte by" showBackButton={false} />
       
-      <ScrollView className="flex-1 px-4">
+      <ScrollView className="flex-1 px-4 pb-20">
         
       </ScrollView>
       

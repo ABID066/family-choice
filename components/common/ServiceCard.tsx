@@ -37,11 +37,11 @@ export default function ServiceCard({
       </View>
       
       <View className="py-4 px-2">
-        <Text className="font-poppins-semibold text-md justify-between text-gray-900 mb-1">
+        <Text className="font-poppins-semibold text-sm justify-between text-gray-900 mb-1">
           {item.name}
           <View className="flex-row items-center">
             <Ionicons name="star" size={16} color="#F59E0B" />
-            <Text className="font-poppins-medium text-sm text-gray-900 ml-1">
+            <Text className="font-poppins-medium text-xs text-gray-900 ml-1">
               {item.rating}/5
             </Text>
           </View>
@@ -49,13 +49,13 @@ export default function ServiceCard({
         
         <View className="flex-row items-center mb-2">
           <Ionicons name="location-outline" size={16} color="#6B7280" />
-          <Text className="font-poppins text-sm text-gray-600 ml-1">
+          <Text className="font-poppins text-xs text-gray-600 ml-1">
             {item.location}
           </Text>
         </View>
         
         <View className="flex-row items-center mb-3">
-          <Text className="font-poppins text-xs text-gray-600">
+          <Text className="font-poppins text-[9px] text-gray-600">
             {item.seatsRemaining} seats remaining
           </Text>
 

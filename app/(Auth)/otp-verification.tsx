@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { useState, useRef, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router, useLocalSearchParams } from 'expo-router';
@@ -80,9 +80,9 @@ export default function OTPVerificationPage() {
   }, [resendTimer]);
 
   return (
-    <View className="flex-1 bg-white px-6 ">
+    <ScrollView className="flex-1 mb-6 bg-white" contentContainerStyle={{ paddingHorizontal: 24 }}>
       {/* Header */}
-      <Text className="text-2xl font-poppins-bold text-black text-center mt-20 mb-4">
+      <Text className="text-2xl font-poppins-bold text-black text-center mt-16 mb-4">
         One time password
       </Text>
       
@@ -163,6 +163,6 @@ export default function OTPVerificationPage() {
         </View>
 
   
-    </View>
+    </ScrollView>
   );
 }

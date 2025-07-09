@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, router } from 'expo-router';
@@ -29,9 +29,9 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <View className="flex-1 bg-white px-6 ">
+    <ScrollView className="flex-1 mb-4 bg-white" contentContainerStyle={{ paddingHorizontal: 24 }}>
       {/* Header */}
-      <Text className="mb-4 mt-20 text-center font-poppins-bold text-2xl text-black">
+      <Text className="mb-4 mt-16 text-center font-poppins-bold text-2xl text-black">
         Reset password
       </Text>
 
@@ -55,7 +55,7 @@ export default function ResetPasswordPage() {
       {/* Email Input */}
       <View className="mb-8">
         <Text className="text-md mb-2 font-poppins-medium text-black">Email Address</Text>
-        <View className="flex-row items-center rounded-full border border-gray-300 px-4 py-3">
+        <View className="flex-row items-center rounded-full border border-gray-300 px-4 py-1">
           <Ionicons name="mail-outline" size={20} color="#52A587" className="mr-3" />
           <TextInput
             placeholder="abc*****@gmail.com"
@@ -71,10 +71,10 @@ export default function ResetPasswordPage() {
 
       {/* Send Instructions Button */}
       <TouchableOpacity className="mb-6 rounded-full bg-gg py-4" onPress={handleSendInstructions}>
-        <Text className="text-center font-poppins-semibold text-lg text-white">
+        <Text className="text-center font-poppins-semibold text-md text-white">
           Send instructions
         </Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }

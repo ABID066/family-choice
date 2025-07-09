@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Alert, Linking, ActivityIndicator, StyleSheet, TextInput, FlatList, Keyboard } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, Linking, ActivityIndicator, StyleSheet, TextInput, FlatList, Keyboard, ScrollView } from 'react-native';
 import { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
@@ -211,7 +211,7 @@ export default function MapSelectionPage() {
   };
 
   return (
-    <View className="flex-1 bg-white">
+    <ScrollView className="flex-1 mb-8 bg-white" contentContainerStyle={{ flexGrow: 1 }}>
       {/* Header */}
       <View className="flex-row items-center justify-between px-4 pt-12 pb-4 bg-white">
         <TouchableOpacity onPress={handleBackPress} className="p-2">
@@ -341,14 +341,14 @@ export default function MapSelectionPage() {
           onPress={handlePickLocation}
           disabled={!selectedLocation}
         >
-          <Text className={`text-center text-lg font-poppins-semibold ${
+          <Text className={`text-center text-md font-poppins-semibold ${
             selectedLocation ? 'text-white' : 'text-gray-500'
           }`}>
             Pick Location
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

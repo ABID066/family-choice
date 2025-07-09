@@ -50,8 +50,9 @@ export default function HomePage() {
   const schoolServices = services.filter((service) => service.type === 'school');
 
   return (
-    <SafeAreaView className="mt-10 flex-1 bg-white">
-      <ScrollView className="flex-1">
+    <SafeAreaView className="flex-1 mt-10 bg-white">
+      <ScrollView className="flex-1 pb-20">
+
         {/* Header */}
         <Header onNotificationPress={() => router.push('/notification')} />
 

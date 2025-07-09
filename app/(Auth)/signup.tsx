@@ -73,10 +73,10 @@ export default function SignUpPage() {
   ];
 
   return (
-    <ScrollView className="flex-1 bg-white">
+    <ScrollView className="flex-1 mb-10 bg-white">
       <View className="px-6 py-8">
         {/* Header */}
-        <Text className="text-2xl font-poppins-bold text-black text-center mt-20 mb-8">
+        <Text className="text-2xl font-poppins-bold text-black text-center mt-4 mb-8">
           Sign Up
         </Text>
 
@@ -101,7 +101,7 @@ export default function SignUpPage() {
             placeholder="Enter Your full name"
             value={fullName}
             onChangeText={setFullName}
-            className="border border-gray-300 font-poppins text-gray-700 rounded-full  px-4 py-5"
+            className="border border-gray-300 font-poppins text-gray-700 rounded-full  px-4 py-4"
             placeholderTextColor="#9CA3AF"
           />
         </View>
@@ -117,7 +117,7 @@ export default function SignUpPage() {
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            className="border border-gray-300  rounded-full  px-4 py-5 font-poppins text-gray-700"
+            className="border border-gray-300  rounded-full  px-4 py-4 font-poppins text-gray-700"
             placeholderTextColor="#9CA3AF"
           />
         </View>
@@ -127,7 +127,7 @@ export default function SignUpPage() {
           <Text className="text-md font-poppins-medium text-black mb-2">
             Phone number
           </Text>
-          <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-2">
+          <View className="flex-row items-center border border-gray-300 rounded-full px-4 py-1">
             
             <TouchableOpacity
               className="flex-row items-center px-1 border-r border-gray-200"
@@ -153,7 +153,7 @@ export default function SignUpPage() {
           <Text className="text-md font-poppins-medium text-black mb-2">
             Password
           </Text>
-          <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-2">
+          <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-1">
             <TextInput
               placeholder="••••••••••••"
               value={password}
@@ -177,7 +177,7 @@ export default function SignUpPage() {
           <Text className="text-md font-poppins-medium text-black mb-2">
             Confirmation password
           </Text>
-          <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-2">
+          <View className="flex-row items-center border border-gray-300 rounded-full  px-4 py-1">
             <TextInput
               placeholder="••••••••••••"
               value={confirmPassword}
@@ -227,7 +227,7 @@ export default function SignUpPage() {
           className="bg-gg rounded-full py-4 mb-6"
           onPress={() => router.push('/location')}
         >
-          <Text className="text-white text-center text-lg font-poppins-semibold">
+          <Text className="text-white text-center text-md font-poppins-semibold">
             Register
           </Text>
         </TouchableOpacity>

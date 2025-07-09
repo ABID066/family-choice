@@ -18,8 +18,8 @@ export default function ServiceSection({
   onBookNow 
 }: ServiceSectionProps) {
   return (
-    <View className="mx-6 mb-6">
-      <Text className="font-poppins-semibold text-lg text-gg mb-4">
+    <View className="mx-2 mb-6">
+      <Text className="font-poppins-semibold text-lg ml-3 text-gg mb-4">
         {title}
       </Text>
       <View className="flex-row flex-wrap justify-between">

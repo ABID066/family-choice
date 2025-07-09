@@ -16,7 +16,7 @@ export default function SearchBar({
   placeholder = "Search Your Service"
 }: SearchBarProps) {
   return (
-    <View className="flex-row items-center bg-gray-100 rounded-full px-4 py-3">
+    <View className="flex-row items-center bg-gray-100 rounded-full px-4 py-2">
       <Ionicons name="search" size={20} color="#9CA3AF" />
       <TextInput
         className="flex-1 ml-3 font-poppins text-gray-700"

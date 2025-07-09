@@ -8,12 +8,10 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { PageHeader, ServiceCard, services, ServiceItem } from '../../components/common';
-import { useRouter } from 'expo-router';
 
 export default function NurseryPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [favorites, setFavorites] = useState<string[]>([]);
-  const router = useRouter()
 
   // Filter services to show only nursery type
   const nurseryServices = services.filter(service => service.type === 'nursery');
